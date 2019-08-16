@@ -8,7 +8,7 @@ module Travis
       end
 
       attr_reader :stack
-      attr_accessor :options
+      attr_accessor :options, :stage
 
       def initialize(trace_enabled = false)
         @stack = [Shell::Ast::Script.new]
