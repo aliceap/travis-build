@@ -28,6 +28,7 @@ module Travis
             end
 
             def opts(options)
+              puts options.inspect
               opts ||= []
               opts << '--assert' if options[:assert]
               opts << '--echo'   if options[:echo]
@@ -35,6 +36,7 @@ module Travis
               opts << '--retry'  if options[:retry]
               opts << '--timing' if options[:timing]
               opts << '--secure' if options[:secure]
+              opts << "--stage #{options[:stage].to_s}"
               opts.join(' ')
             end
         end
